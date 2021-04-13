@@ -2,9 +2,14 @@
 
 # This script demonstrates the use of functions.
 
+#Example:
+#for var in "$@"
+#do
+#    echo "$var"
+#done
+
 log() {
   # This function sends a message to syslog and to standard output if VERBOSE is true.
-
   local MESSAGE="${@}"
   if [[ "${VERBOSE}" = 'true' ]]
   then
@@ -33,7 +38,7 @@ backup_file() {
 }
 
 readonly VERBOSE='true'
-log 'Hello!'
+log 'Hello!' 'what' 'this'
 log 'This is fun!'
 
 backup_file /etc/passwd

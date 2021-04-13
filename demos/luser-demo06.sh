@@ -21,8 +21,12 @@ then
 fi
 
 # Generate and display a password for each parameter.
+# reference https://www.cyberciti.biz/faq/bash-for-loop/
 for USER_NAME in "${@}"
 do
   PASSWORD=$(date +%s%N | sha256sum | head -c48)
   echo "${USER_NAME}: ${PASSWORD}"
 done
+
+echo ${1}
+echo ${2}
